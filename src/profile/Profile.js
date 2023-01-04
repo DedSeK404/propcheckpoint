@@ -1,5 +1,4 @@
 import React from "react";
-import ProfilePic from "./ProfilePic";
 import PropTypes from "prop-types";
 
 const Profile = (props)  =>{
@@ -21,8 +20,8 @@ const Profile = (props)  =>{
         boxShadow:"1px 1px 20px green",
         }}>
            {/* Child profile picture  */}
-        <ProfilePic imagePath = {'dune.jpg'}/>
         
+        {props.children}
         {/* component texts */}
         <p style={{
             color:"white",
@@ -46,7 +45,9 @@ const Profile = (props)  =>{
             fontSize:"15px",
             textShadow: "0 0 3px #00FF00, 0 0 5px #90EE90",
         }}>Profession: {props.profession}</p>
-    
+    <button style={{backgroundColor:"green",color:"white"}}
+    onClick={()=>props.handleName(props.fullName)}
+    >click</button>
      </div>   
 
     )
